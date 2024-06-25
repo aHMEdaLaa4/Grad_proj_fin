@@ -45,6 +45,8 @@ dependencies:
   flutter_slidable: ^3.0.1
   http: ^1.2.0
   lottie: ^3.1.2
+  fl_chart: ^0.68.0
+
 
   dio: ^5.4.0
   zego_uikit_prebuilt_call: ^3.11.0
