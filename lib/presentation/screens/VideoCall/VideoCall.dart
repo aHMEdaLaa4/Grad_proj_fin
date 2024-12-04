@@ -12,10 +12,10 @@ class VideoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: ZegoUIKitPrebuiltCall(
-            appID: 1460345174,
+            appID: 723729696,
             // Fill in the appID that you get from ZEGOCLOUD Admin Console.
             appSign:
-            'c8e0871a93fe0a5642a401d556ca4534bcc19bf7c3b815446904d736312f30b6',
+            'd4895f22446e68280363eaf3a6e31b721974a7bf1e07b49de2b7dc4a12bfd836',
             // Fill in the appSign that you get from ZEGOCLOUD Admin Console.
             userID: userid,
             userName: username,
@@ -25,5 +25,5 @@ class VideoPage extends StatelessWidget {
   }
 }
 
-String userid = Random().nextInt(10095000).toString();
+String userid = Random().nextInt(1095000).toString();
 String username = Random().nextInt(10095000).toString();

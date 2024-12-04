@@ -11,7 +11,9 @@ class resource extends StatefulWidget {
 int index = 0;
 
 List _photos = [
-  Data(image: 'assets/images/b593eeff439a9720bfdbbcd8c1b31f30 1.png', title: 'Math Book - Grade 1'),
+  Data(
+      image: 'assets/images/b593eeff439a9720bfdbbcd8c1b31f30 1.png',
+      title: 'Math Book - Grade 1'),
   Data(image: 'assets/images/book2.png', title: 'Science Book -Grade 1'),
   Data(image: 'assets/images/image1 (10).jpg', title: 'Arabic Book - Grade 1'),
   Data(image: 'assets/images/image1 (11).jpg', title: 'English Book - Grade 1'),
@@ -79,7 +81,7 @@ class _resourceState extends State<resource> {
                                 child: Container(
                                   padding: EdgeInsets.all(10),
                                   width: 450,
-                                  height: 320,
+                                  height: 370,
                                   child: Center(
                                     child: Column(
                                       mainAxisAlignment:

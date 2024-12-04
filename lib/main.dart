@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
       BlocProvider(create: (context)=>SettingsCubit()),
       BlocProvider(create: (context)=>LoginPatientCubit()),
       BlocProvider(create: (context)=>TasksCubit()),
-      BlocProvider(create: (nnnnnnnnnnnnnnnnnnncontext)=>CreateTaskCubit()),
+      BlocProvider(create: (context)=>CreateTaskCubit()),
     ] , child: MaterialApp(debugShowCheckedModeBanner: false,
 
       home:SplashScreen(),

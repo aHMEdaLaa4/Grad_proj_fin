@@ -44,17 +44,22 @@ class _HomeState extends State<Home> {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => Search(),));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Search(),
+                                  ));
                             },
                             child: Container(
-                              width: 265,
+                              width: 300,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.start,
-
                                 children: [
-                                  SizedBox(width: 20,)
-                            ,                                Icon(Icons.search),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  Icon(Icons.search),
                                 ],
                               ),
                               height: 45,
@@ -65,7 +70,7 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           Container(
-                            padding: const EdgeInsets.only(left: 5),
+                            padding: const EdgeInsets.only(left: 20),
                             child: IconButton(
                                 onPressed: () {
                                   Navigator.of(context).push(
@@ -130,14 +135,16 @@ class _HomeState extends State<Home> {
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.bold)),
                                       ),
-                                      Container(child: const Divider(
+                                      Container(
+                                        child: const Divider(
                                           color: Color.fromARGB(
                                               255, 167, 191, 211),
                                           thickness: 2,
                                           endIndent: 7,
                                         ),
                                       ),
-                                       Lottie.asset('assets/images/task.json',height: 70)
+                                      Lottie.asset('assets/images/task.json',
+                                          height: 70)
                                     ],
                                   ),
                                 ),
@@ -163,17 +170,17 @@ class _HomeState extends State<Home> {
                                   child: Column(
                                     children: [
                                       Container(
-                                        height: 25,
+                                        height: 15,
                                       ),
                                       Container(
-                                        padding: const EdgeInsets.only(top: 5),
+                                        padding: const EdgeInsets.only(top: 15),
                                         child: const Text("Favorite",
                                             style: TextStyle(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.bold)),
                                       ),
                                       Container(
-                                        padding: const EdgeInsets.all(10),
+                                        padding: const EdgeInsets.all(5),
                                         child: const Divider(
                                           color: Color.fromARGB(
                                               255, 167, 191, 211),
@@ -182,7 +189,9 @@ class _HomeState extends State<Home> {
                                         ),
                                       ),
                                       Container(
-                                          child:Lottie.asset('assets/images/start.json',width: 50)),
+                                          child: Lottie.asset(
+                                              'assets/images/start.json',
+                                              width: 45)),
                                     ],
                                   ),
                                 ),
@@ -227,7 +236,9 @@ class _HomeState extends State<Home> {
                                         ),
                                       ),
                                       Container(
-                                          child: Lottie.asset('assets/images/trash.json',width: 40)),
+                                          child: Lottie.asset(
+                                              'assets/images/trash.json',
+                                              width: 40)),
                                     ],
                                   ),
                                 ),

@@ -16,7 +16,6 @@ import '../../../Cache/local_network.dart';
 import '../../screens/ForgetPassDoc/Forget_pass.dart';
 import '../../screens/VideoCall/callscreen.dart';
 
-
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -52,13 +51,19 @@ class ProfileScreen extends StatelessWidget {
                             bottom: BorderSide(
                                 color: Color.fromARGB(63, 196, 196, 196),
                                 width: 1))),
-                    child:  ListTile(
-                      leading:                    CircleAvatar(
+                    child: ListTile(
+                      leading: CircleAvatar(
                         radius: 30,
-                        backgroundImage: SettingsCubit.get(context).DocDetails['photo']!=null?NetworkImage(SettingsCubit.get(context).DocDetails['photo'].toString())
-                          :NetworkImage('https://th.bing.com/th/id/R.9c213f70d66f833eb40f7cc3e907d724?rik=X9mHpfM3hPTvmA&pid=ImgRaw&r=0'),)
-,
-                        title: Row(
+                        backgroundImage: SettingsCubit.get(context)
+                                    .DocDetails['photo'] !=
+                                null
+                            ? NetworkImage(SettingsCubit.get(context)
+                                .DocDetails['photo']
+                                .toString())
+                            : NetworkImage(
+                                'https://th.bing.com/th/id/R.9c213f70d66f833eb40f7cc3e907d724?rik=X9mHpfM3hPTvmA&pid=ImgRaw&r=0'),
+                      ),
+                      title: Row(
                         children: [
                           Text(
                             'Dr.${CacheNetwork.getCacheData(key: 'name')} ',
@@ -74,7 +79,8 @@ class ProfileScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      subtitle: Text(SettingsCubit.get(context).DocDetails['specialize']),
+                      subtitle: Text(
+                          SettingsCubit.get(context).DocDetails['specialize']),
                     ),
                   ),
                   Padding(
@@ -126,9 +132,11 @@ class ProfileScreen extends StatelessWidget {
                               MaterialButton(
                                 minWidth: 1,
                                 onPressed: () {
-                                  SettingsCubit.get(context).getDoctorInformation(context: context);
-                                  Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) => const SettingsWidget()));
+                                  SettingsCubit.get(context)
+                                      .getDoctorInformation(context: context);
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) =>
+                                          const SettingsWidget()));
                                 },
                                 child: const Icon(
                                   Icons.arrow_forward_ios,
@@ -155,9 +163,10 @@ class ProfileScreen extends StatelessWidget {
                               MaterialButton(
                                 minWidth: 1,
                                 onPressed: () {
-                                  SettingsCubit.get(context).getDoctorInformation(context: context);
-                                  Navigator.of(context).push(
-                                      MaterialPageRoute(builder: (context) =>  FORGET()));
+                                  SettingsCubit.get(context)
+                                      .getDoctorInformation(context: context);
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (context) => FORGET()));
                                 },
                                 child: const Icon(
                                   Icons.arrow_forward_ios,
@@ -184,7 +193,6 @@ class ProfileScreen extends StatelessWidget {
                               MaterialButton(
                                 minWidth: 1,
                                 onPressed: () {
-
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (context) =>
                                           const FeedBackWidget()));
@@ -295,30 +303,33 @@ class ProfileScreen extends StatelessWidget {
                                 textColor: Colors.white,
                                 fontSize: 16.0);
 
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginDoc(),));
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginDoc(),
+                                ));
                           },
                           child: Container(
-                            color: Colors.red.shade100,
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             child: ListTile(
-
                               leading: const Icon(
                                 Icons.logout_outlined,
                                 color: Color.fromARGB(193, 0, 0, 129),
                                 size: 30,
                               ),
                               title: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   const Text(
                                     'Log Out',
                                     style: TextStyle(
-                                        fontWeight: FontWeight.bold, fontSize: 17),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17),
                                   ),
                                   MaterialButton(
                                     minWidth: 1,
-                                    onPressed: () {
-
-                                    },
+                                    onPressed: () {},
                                     child: const Icon(
                                       Icons.arrow_forward_ios,
                                       size: 16,

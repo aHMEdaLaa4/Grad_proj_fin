@@ -11,8 +11,6 @@ import 'package:graduation/presentation/screens/loginDoctor/login_doc.dart';
 
 import '../../screens/log_in.dart';
 
-
-
 class profile extends StatefulWidget {
   const profile({super.key});
 
@@ -36,8 +34,8 @@ class _profileState extends State<profile> {
             )),
             Container(
               padding: EdgeInsets.only(top: 10),
-              width: 90,
-              height: 90,
+              width: 100,
+              height: 100,
               child: Center(
                   child: ClipRRect(
                 borderRadius: BorderRadius.circular(20),
@@ -48,7 +46,7 @@ class _profileState extends State<profile> {
               child: Center(
                   child: Text(
                 "${CacheNetwork.getCacheData(key: 'name')}",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               )),
             ),
             Center(
@@ -58,87 +56,13 @@ class _profileState extends State<profile> {
                     "Edit Profile",
                     style: TextStyle(
                       color: Colors.blue[700],
-                      fontSize: 14.5,
+                      fontSize: 12,
                       decoration: TextDecoration.underline,
                     ),
                   )),
             ),
             ////////////////////////////////////////////////////////////////////////
-            InkWell(
-              onTap: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return Dialog(
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(18.0))),
-                      child: Container(
-                        width: 300,
-                        height: 260,
-                        child: Center(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset(
-                                'assets/images/image1 (15).jpg',
-                              ),
-                              Text(
-                                "Congratulations",
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(top: 4, bottom: 4),
-                                child: Text(
-                                  "You’ve earned FIRST place ",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: Color.fromARGB(255, 62, 123, 173),
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                "Always look for the best",
-                                style:
-                                    TextStyle(fontSize: 18, color: Colors.grey),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
-              child: Container(
-                margin: EdgeInsets.only(top: 15, left: 5, right: 5),
-                padding: EdgeInsets.all(5),
-                child: Row(
-                  children: [
-                    Container(
-                        child: Expanded(
-                            child: ListTile(
-                      leading: Icon(
-                        FontAwesomeIcons.trophy,
-                        size: 22,
-                        color: Color.fromARGB(255, 62, 123, 173),
-                      ),
-                      title: Text(
-                        "Rewards",
-                        style: TextStyle(
-                            fontSize: 19, fontWeight: FontWeight.bold),
-                      ),
-                      trailing: Icon(Icons.chevron_right_outlined),
-                    ))),
-                  ],
-                ),
-              ),
-            ),
-            ////////////////////////////////////////////////////////////////////////////
+
             InkWell(
               onTap: () {
                 Navigator.of(context).push(
@@ -169,36 +93,7 @@ class _profileState extends State<profile> {
               ),
             ),
             ////////////////////////////////////////////////////////////////////////////
-            InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => appointment()),
-                );
-              },
-              child: Container(
-                margin: EdgeInsets.only(top: 5, left: 5, right: 5),
-                padding: EdgeInsets.all(5),
-                child: Row(
-                  children: [
-                    Container(
-                        child: Expanded(
-                            child: ListTile(
-                      leading: Icon(
-                        FontAwesomeIcons.calendar,
-                        size: 22,
-                        color: Color.fromARGB(255, 62, 123, 173),
-                      ),
-                      title: Text(
-                        "Book an appointment",
-                        style: TextStyle(
-                            fontSize: 19, fontWeight: FontWeight.bold),
-                      ),
-                      trailing: Icon(Icons.chevron_right_outlined),
-                    ))),
-                  ],
-                ),
-              ),
-            ),
+
             ////////////////////////////////////////////////////////////////////////////
             InkWell(
               onTap: () {
@@ -293,8 +188,11 @@ class _profileState extends State<profile> {
             ////////////////////////////////////////////////////////////////////////////
             InkWell(
               onTap: () {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>
-                    LOGIN(),));
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LOGIN(),
+                    ));
               },
               child: Container(
                 margin: EdgeInsets.only(top: 5, left: 5, right: 5),

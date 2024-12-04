@@ -25,9 +25,9 @@ TextEditingController endcontroler = TextEditingController();
 TextEditingController title = TextEditingController();
 var startTime;
 var endTime;
-bool Hidden= false;
-bool Favourite= false;
-bool Trash= false;
+bool Hidden = false;
+bool Favourite = false;
+bool Trash = false;
 
 class _addTaskState extends State<addTask> {
   @override
@@ -43,6 +43,16 @@ class _addTaskState extends State<addTask> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Center(
+                        child: Container(
+                          padding: EdgeInsets.only(top: 10, bottom: 10),
+                          child: Text(
+                            "Create New Task",
+                            style: TextStyle(
+                                fontSize: 22, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
                       Container(
                         padding: const EdgeInsets.only(top: 10),
                         child: Row(
@@ -74,7 +84,9 @@ class _addTaskState extends State<addTask> {
                         hint: "Enter the Purpose",
                         // widget: null,
                       ),
-                      SizedBox(height: 18,),
+                      SizedBox(
+                        height: 18,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -83,41 +95,54 @@ class _addTaskState extends State<addTask> {
                               Text('Start'),
                               TimePickerSpinnerPopUp(
                                 mode: CupertinoDatePickerMode.time,
-                                minTime: DateTime.now().subtract(const Duration(days: 10)),
-                                maxTime: DateTime.now().add(const Duration(days: 800)),
-                                barrierColor: Colors.black12, //Barrier Color when pop up show
+                                minTime: DateTime.now()
+                                    .subtract(const Duration(days: 10)),
+                                maxTime: DateTime.now()
+                                    .add(const Duration(days: 800)),
+                                barrierColor: Colors
+                                    .black12, //Barrier Color when pop up show
                                 minuteInterval: 1,
-                                padding : const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                                cancelText : 'Cancel',
-                                confirmText : 'OK',
+                                padding:
+                                    const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                                cancelText: 'Cancel',
+                                confirmText: 'OK',
                                 pressType: PressType.singlePress,
                                 // Customize your time widget
                                 // timeWidgetBuilder: (dateTime) {},
                                 onChange: (dateTime) {
-                                  startTime= '${dateTime.hour}:${dateTime.minute}:${dateTime.second}';
-                                  print(startTime);                                  // Implement your logic with select dateTime
+                                  startTime =
+                                      '${dateTime.hour}:${dateTime.minute}:${dateTime.second}';
+                                  print(
+                                      startTime); // Implement your logic with select dateTime
                                 },
                               )
                             ],
                           ),
-                          SizedBox(width: 50,),
+                          SizedBox(
+                            width: 50,
+                          ),
                           Column(
                             children: [
                               Text('End'),
                               TimePickerSpinnerPopUp(
                                 mode: CupertinoDatePickerMode.time,
-                                minTime: DateTime.now().subtract(const Duration(days: 10)),
-                                maxTime: DateTime.now().add(const Duration(days: 800)),
-                                barrierColor: Colors.black12, //Barrier Color when pop up show
+                                minTime: DateTime.now()
+                                    .subtract(const Duration(days: 10)),
+                                maxTime: DateTime.now()
+                                    .add(const Duration(days: 800)),
+                                barrierColor: Colors
+                                    .black12, //Barrier Color when pop up show
                                 minuteInterval: 1,
-                                padding : const EdgeInsets.fromLTRB(12, 10, 12, 10),
-                                cancelText : 'Cancel',
-                                confirmText : 'OK',
+                                padding:
+                                    const EdgeInsets.fromLTRB(12, 10, 12, 10),
+                                cancelText: 'Cancel',
+                                confirmText: 'OK',
                                 pressType: PressType.singlePress,
                                 // Customize your time widget
                                 // timeWidgetBuilder: (dateTime) {},
                                 onChange: (dateTime) {
-                                  endTime= '${dateTime.hour}:${dateTime.minute}:${dateTime.second}';
+                                  endTime =
+                                      '${dateTime.hour}:${dateTime.minute}:${dateTime.second}';
                                   print(endTime);
                                   // Implement your logic with select dateTime
                                 },
@@ -159,13 +184,13 @@ class _addTaskState extends State<addTask> {
                                                   255, 61, 125, 177),
                                         ),
                                         onPressed: () {
-                                          Hidden=!Hidden;
+                                          Hidden = !Hidden;
                                           setState(() {
                                             click_1 = !click_1;
                                           });
                                         },
                                         child: const Text(
-                                          "Hidden",
+                                          "Low",
                                           style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold,
@@ -198,12 +223,12 @@ class _addTaskState extends State<addTask> {
                                       ),
                                       onPressed: () {
                                         setState(() {
-                                          Favourite=!Favourite;
+                                          Favourite = !Favourite;
                                           click_2 = !click_2;
                                         });
                                       },
                                       child: const Text(
-                                        "Favourite",
+                                        "Medium",
                                         style: TextStyle(
                                             fontSize: 12,
                                             fontWeight: FontWeight.bold,
@@ -232,12 +257,12 @@ class _addTaskState extends State<addTask> {
                                       ),
                                       onPressed: () {
                                         setState(() {
-                                          Trash=!Trash;
+                                          Trash = !Trash;
                                           click_3 = !click_3;
                                         });
                                       },
                                       child: const Text(
-                                        "Trash",
+                                        "High",
                                         style: TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,

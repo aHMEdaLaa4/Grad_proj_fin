@@ -30,14 +30,25 @@ class _taskState extends State<task> {
             ),
             body: state is TasksGetLOADING
                 ? const Center(child: CircularProgressIndicator())
-
-                    : Column(
-                      children: [
-                        Container(child: Expanded(
-
-                            child: AllTasks(context: context))),
-                      ],
-                    ));
+                : Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Color.fromRGBO(121, 152, 155, 0.612),
+                            borderRadius: BorderRadius.circular(20)),
+                        padding: EdgeInsets.only(top: 15, left: 30, right: 30),
+                        margin: EdgeInsets.only(
+                            left: 20, right: 20, top: 20, bottom: 20),
+                        child: TableCalendar(
+                          focusedDay: today,
+                          firstDay: DateTime.utc(2010, 10, 16),
+                          lastDay: DateTime.utc(2025, 12, 31),
+                        ),
+                      ),
+                      Container(
+                          child: Expanded(child: AllTasks(context: context))),
+                    ],
+                  ));
       },
     );
   }

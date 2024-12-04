@@ -3,8 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:graduation/presentation/aml/profile.dart/appointment.dart';
 import 'package:graduation/presentation/aml/profile.dart/doctors.dart';
 
-
-
 class aboutDoctors extends StatefulWidget {
   final String img;
   final String name;
@@ -83,8 +81,8 @@ class _aboutDoctorsState extends State<aboutDoctors> {
                     },
                     icon: Icon(
                       click
-                          ? FontAwesomeIcons.solidHeart
-                          : FontAwesomeIcons.heart,
+                          ? FontAwesomeIcons.heart
+                          : FontAwesomeIcons.solidHeart,
                     ),
                     color: click
                         ? Color.fromARGB(255, 61, 125, 177)
